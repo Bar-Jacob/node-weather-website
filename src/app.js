@@ -5,7 +5,10 @@ var express = require("express");
 var hbs = require("hbs");
 var geocode_1 = require("./utils/geocode");
 var forcast_1 = require("./utils/forcast");
+console.log("checking");
 var app = express();
+// the first argument is the port heroku will provide us
+var port = process.env.PORT || 3000;
 /* Define paths for Express config */
 var publicDirectoryPath = path.join(__dirname, '../public');
 var viewsPath = path.join(__dirname, '../templates/views');
@@ -93,8 +96,8 @@ app.get('*', function (req, res) {
 });
 // this will start up the server, and will call the callback function when its up
 // whenever someone visit the root of our website, the server is up and running, listening for requests
-app.listen(3000, function () {
-    console.log('Server is up on port 3000');
+app.listen(port, function () {
+    console.log("Server is up on port ".concat(port));
 });
 // path to this file's directory
 // console.log(__dirname)

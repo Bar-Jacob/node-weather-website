@@ -5,6 +5,8 @@ import { geocode, geocodeData } from "./utils/geocode";
 import { forcast } from "./utils/forcast";
 
 const app = express();
+// the first argument is the port heroku will provide us
+const port = process.env.PORT || 3000;
 
 /* Define paths for Express config */
 const publicDirectoryPath: string = path.join(__dirname, '../public');
@@ -112,8 +114,8 @@ app.get('*', (req, res) => {
 
 // this will start up the server, and will call the callback function when its up
 // whenever someone visit the root of our website, the server is up and running, listening for requests
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 })
 
 
