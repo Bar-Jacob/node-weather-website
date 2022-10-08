@@ -11,7 +11,7 @@ export const forcast = function (latitude: number, longtitude: number, callback:
             callback('Unable to find location', undefined);
         } else {
             const currentProperty = body.current;
-            callback(undefined, `${currentProperty.weather_descriptions[0]}. It is currently ${currentProperty.temperature} degrees out. It feels like ${currentProperty.feelslike} degrees out.`)
+            callback(undefined, `${currentProperty.weather_descriptions[0]}. It is currently ${currentProperty.temperature} degrees out. It feels like ${currentProperty.feelslike} degrees out. The humidity is ${currentProperty.humidity}%`)
         }
     })
 }

@@ -15,7 +15,7 @@ var forcast = function (latitude, longtitude, callback) {
         }
         else {
             var currentProperty = body.current;
-            callback(undefined, "".concat(currentProperty.weather_descriptions[0], ". It is currently ").concat(currentProperty.temperature, " degrees out. It feels like ").concat(currentProperty.feelslike, " degrees out."));
+            callback(undefined, "".concat(currentProperty.weather_descriptions[0], ". It is currently ").concat(currentProperty.temperature, " degrees out. It feels like ").concat(currentProperty.feelslike, " degrees out. The humidity is ").concat(currentProperty.humidity, "%"));
         }
     });
 };
