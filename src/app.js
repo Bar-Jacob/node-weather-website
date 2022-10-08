@@ -5,7 +5,6 @@ var express = require("express");
 var hbs = require("hbs");
 var geocode_1 = require("./utils/geocode");
 var forcast_1 = require("./utils/forcast");
-console.log("checking");
 var app = express();
 // the first argument is the port heroku will provide us
 var port = process.env.PORT || 3000;

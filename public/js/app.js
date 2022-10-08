@@ -10,7 +10,8 @@ weatherForm === null || weatherForm === void 0 ? void 0 : weatherForm.addEventLi
         return;
     messageOne.textContent = "Loading...";
     messageTwo.textContent = '';
-    fetch("http://localhost:3000/weather?address=".concat(location)).then(function (response) {
+    // will use the port were on automatically (local to heroku)
+    fetch("/weather?address=".concat(location)).then(function (response) {
         response.json().then(function (data) {
             if (data.error) {
                 messageOne.textContent = data.error;
